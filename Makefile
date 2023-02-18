@@ -6,7 +6,7 @@
 #    By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 14:19:17 by jehubert          #+#    #+#              #
-#    Updated: 2023/02/18 15:24:12 by jehubert         ###   ########.fr        #
+#    Updated: 2023/02/18 15:29:24 by jehubert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,18 +14,19 @@ NAME = fractol
 
 LIBFT = libft/libft.a
 
-SRCS = srcs/main.c
+SRCS = srcs/main.c \
+	srcs/complex.c
 
 OBJS = $(patsubst %,objs/%,$(notdir ${SRCS:.c=.o}))
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3
 
 objs/%.o : srcs/%.c
-	${CC} ${CFLAGS} -I/usr/include -Imlx_linux -O3 -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}:	$(OBJS)
 	make --no-print-directory -C ./libft
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME) -lm
 	echo "DONE !"
 
 all: $(NAME)

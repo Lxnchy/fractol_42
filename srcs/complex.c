@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:43:17 by jehubert          #+#    #+#             */
-/*   Updated: 2023/02/18 15:17:21 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/02/18 15:47:56 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ t_complex	ft_mul_complex(t_complex *a, t_complex *b)
 	return (res);
 }
 
-t_complex	*ft_new_complex(float re, float img)
+t_complex	ft_new_complex(float re, float img)
 {
-	t_complex	*new;
+	t_complex	new;
 
-	new = malloc(sizeof(t_complex));
-	if (!new)
-		return (NULL);
-	new->re = re;
-	new->img = img;
-	new->mod = sqrt(pow(new->re, 2) + pow(new->img, 2));
+	new.re = re;
+	new.img = img;
+	new.mod = sqrt(pow(new.re, 2) + pow(new.img, 2));
+	return (new);
 }
