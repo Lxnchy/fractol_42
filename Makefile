@@ -6,7 +6,7 @@
 #    By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 14:19:17 by jehubert          #+#    #+#              #
-#    Updated: 2023/02/18 14:33:53 by jehubert         ###   ########.fr        #
+#    Updated: 2023/02/18 15:24:12 by jehubert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJS = $(patsubst %,objs/%,$(notdir ${SRCS:.c=.o}))
 CFLAGS = -Wall -Wextra -Werror
 
 objs/%.o : srcs/%.c
-	${CC} ${CFLAGS} -c $< -o $@
+	${CC} ${CFLAGS} -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 ${NAME}:	$(OBJS)
 	make --no-print-directory -C ./libft
