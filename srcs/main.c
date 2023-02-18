@@ -6,9 +6,13 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:12:54 by jehubert          #+#    #+#             */
-/*   Updated: 2023/02/18 14:18:25 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/02/18 14:28:44 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
+int	main(void)
+{
+	
+}
