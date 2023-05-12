@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mlx_destroy_display.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 14:12:54 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/12 17:36:19 by jehubert         ###   ########.fr       */
+/*   Created: 2020/10/03 18:56:35 by mg                #+#    #+#             */
+/*   Updated: 2020/10/04 01:55:35 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
-#include <mlx.h>
+#include "mlx_int.h"
 
-int	main(int ac, char **av)
+int	mlx_destroy_display(t_xvar *xvar)
 {
-	(void)ac;
-	(void)av;
-	return (0);
+	XCloseDisplay(xvar->display);
 }
