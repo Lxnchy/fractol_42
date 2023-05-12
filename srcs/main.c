@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:12:54 by jehubert          #+#    #+#             */
-/*   Updated: 2023/02/18 15:47:53 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:23:23 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ int	main(int ac, char **av)
 {
 	(void)ac;
 	(void)av;
+	return (0);
 }
