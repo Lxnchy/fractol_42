@@ -6,7 +6,7 @@
 #    By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 14:19:17 by jehubert          #+#    #+#              #
-#    Updated: 2023/05/12 17:19:39 by jehubert         ###   ########.fr        #
+#    Updated: 2023/05/13 16:10:04 by jehubert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME = fractol
 LIBFT = libft/libft.a
 
 SRCS = srcs/main.c \
-	srcs/complex.c
+	srcs/complex.c \
+	srcs/calc
 
 OBJS = $(patsubst %,objs/%,$(notdir ${SRCS:.c=.o}))
 
