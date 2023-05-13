@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:43:17 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/13 16:18:31 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/13 17:18:36 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,13 @@ t_complex	ft_new_complex(long double re, long double img)
 	new.re = re;
 	new.img = img;
 	return (new);
+}
+
+t_complex	ft_add_complex(t_complex a, t_complex b)
+{
+	t_complex	res;
+
+	res.re = a.re + b.re;
+	res.img = a.img + b.img;
+	return (res);
 }
