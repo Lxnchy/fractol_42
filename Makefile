@@ -6,7 +6,7 @@
 #    By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 14:19:17 by jehubert          #+#    #+#              #
-#    Updated: 2023/05/13 16:10:04 by jehubert         ###   ########.fr        #
+#    Updated: 2023/05/13 16:29:39 by jehubert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT = libft/libft.a
 
 SRCS = srcs/main.c \
 	srcs/complex.c \
-	srcs/calc
+	srcs/mlx_utils.c
 
 OBJS = $(patsubst %,objs/%,$(notdir ${SRCS:.c=.o}))
 
@@ -27,20 +27,23 @@ objs/%.o : srcs/%.c
 
 ${NAME}:	$(OBJS)
 	make --no-print-directory -C ./libft
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+	make --no-print-directory -C ./mlx_linux
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -Lmlx_linux -L/usr/lib -Imlx_linux -lmlx -lXext -lX11 -lm -lz -o $(NAME)
 	echo "DONE !"
 
 all: $(NAME)
 
 clean:
 	make --no-print-directory -C ./libft clean
+	make --no-print-directory -C ./mlx_linux clean
 	rm -f $(OBJS)
 	echo ".o FILES DELETED !"
 
 fclean:
 	make --no-print-directory -C ./libft fclean
+	make --no-print-directory -C ./mlx_linux clean
 	rm -f $(OBJS) $(NAME)
-	echo ".o & EXECUTABLE DELETED"
+	echo ".o & EXECUTABLE DELETED !"
 
 .PHONY: all clean fclean re
 .SILENT: all clean fclean re $(NAME) $(OBJS)
