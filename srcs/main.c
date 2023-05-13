@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:12:54 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/13 18:08:45 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/13 18:44:45 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static void	ft_pix(t_complex c, t_data *img, int dim)
 
 	z = (t_complex){0, 0};
 	i = -1;
-	while (ft_mod_complex(z) < 4 && ++i < 200)
-		z = ft_add_complex(ft_mul_complex(z, z), c);
+	while (ft_mod_complex(z) < 4 && ++i < 20)
+		z = ft_add_complex(ft_mul_complex(z, z), (t_complex){c.re, c.img});
 	if (i == 20)
 		my_mlx_pixel_put(img, c.re + dim / 2, c.img + dim / 2, 0x00FF0000);
 	else
@@ -33,10 +33,12 @@ static void	ft_fractal(int dim, t_data *img)
 	int	j;
 
 	i = -dim / 2 - 1;
-	j = -dim / 2 - 1;
 	while (++i < dim / 2)
+	{
+		j = -dim / 2 - 1;
 		while (++j < dim / 2)
 			ft_pix((t_complex){i, j}, img, dim);
+	}
 }
 
 int	main(void)
