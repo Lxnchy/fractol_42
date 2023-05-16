@@ -6,7 +6,7 @@
 #    By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 14:19:17 by jehubert          #+#    #+#              #
-#    Updated: 2023/05/13 16:29:39 by jehubert         ###   ########.fr        #
+#    Updated: 2023/05/16 15:08:35 by jehubert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,13 +25,15 @@ CFLAGS = -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O2 -O3 -march=native 
 objs/%.o : srcs/%.c
 	${CC} ${CFLAGS} -c -Imlx $< -o $@
 
-${NAME}:	$(OBJS)
+${NAME}:	$(OBJS) Makefile includes/fractol.h
 	make --no-print-directory -C ./libft
 	make --no-print-directory -C ./mlx_linux
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -Lmlx_linux -L/usr/lib -Imlx_linux -lmlx -lXext -lX11 -lm -lz -o $(NAME)
 	echo "DONE !"
 
 all: $(NAME)
+
+re: all
 
 clean:
 	make --no-print-directory -C ./libft clean

@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:43:17 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/13 17:18:36 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:13:49 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ long double	ft_mod_complex(t_complex z)
 t_complex	ft_mul_complex(t_complex a, t_complex b)
 {
 	t_complex	res;
-	int			re;
-	int			img;
+	double long	re;
+	double long	img;
 
 	re = (a.re * b.re) - (a.img * b.img);
 	img = (a.re * b.img + b.re * a.img);

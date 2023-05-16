@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:13:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/16 13:45:52 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:14:29 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 # include <math.h>
 # include <mlx.h>
 
-# define xmin -2
-# define ymin -2
-# define xmax 1.5
-# define ymax 1.5
-# define DIM 800
-# define maxiter 20
+# define xmin -1.0
+# define ymin -1.0
+# define xmax 1.0
+# define ymax 1.0
+# define DIM 800.0
+# define maxiter 300
 
 typedef struct s_complex	t_complex;
 typedef struct s_data		t_data;

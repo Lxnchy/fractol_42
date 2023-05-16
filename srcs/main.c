@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:12:54 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/16 13:46:01 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:16:02 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static t_complex	ft_point(int px, int py)
 
 	x = xmin + ((xmax - xmin) / DIM) * px;
 	y = ymin + ((ymax - ymin) / DIM) * py;
-	// printf("px : %d -> x:%Lf\npy: %d -> y: %Lf", px, x, py, y);
 	return ((t_complex){x, y});
 }
 
