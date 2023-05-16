@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:12:54 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/15 18:11:48 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:46:01 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static void	ft_pix(t_point p, t_data *img)
 
 	z = (t_complex){0, 0};
 	i = -1;
-	while (ft_mod_complex(z) <= 40 && ++i < 20)
+	while (ft_mod_complex(z) < 4 && ++i < maxiter)
 		z = ft_add_complex(ft_mul_complex(z, z), p.calc);
-	if (i == 20)
+	if (i == maxiter)
 		my_mlx_pixel_put(img, p.pos.re, p.pos.img, 0);
 	else
 		my_mlx_pixel_put(img, p.pos.re, p.pos.img, 0x0000FF00);
@@ -34,6 +34,7 @@ static t_complex	ft_point(int px, int py)
 
 	x = xmin + ((xmax - xmin) / DIM) * px;
 	y = ymin + ((ymax - ymin) / DIM) * py;
+	// printf("px : %d -> x:%Lf\npy: %d -> y: %Lf", px, x, py, y);
 	return ((t_complex){x, y});
 }
 

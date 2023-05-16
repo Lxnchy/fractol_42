@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:13:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/15 16:48:35 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:45:52 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define xmax 1.5
 # define ymax 1.5
 # define DIM 800
+# define maxiter 20
 
 typedef struct s_complex	t_complex;
 typedef struct s_data		t_data;
