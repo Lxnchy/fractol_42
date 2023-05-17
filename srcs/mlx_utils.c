@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:09:45 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/17 17:05:23 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:16:59 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,22 @@ static void	ft_close(t_vars *mlx)
 	exit(0);
 }
 
-int	ft_hook(int keycode, t_vars *vars)
+int	ft_key_hook(int keycode, t_vars *mlx)
 {
 	if (keycode == 65307)
-		ft_close(vars);
-	// printf("%i\n", keycode);
-	(void)vars;
+		ft_close(mlx);
+	else if (keycode == 115)
+		ft_printf("Change color\n");
+	return (0);
+}
+
+int	ft_mouse_hook(int keycode, int x, int y, t_vars *mlx)
+{
+	ft_printf("x: %i ; y: %i\n", x, y);
+	if (keycode == 4)
+		ft_printf("ZOOM\n");
+	else if (keycode == 5)
+		ft_printf("DEZOOM\n");
+	(void)mlx;
 	return (0);
 }

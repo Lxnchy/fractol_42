@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:12:54 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/17 16:57:08 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:12:15 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	ft_fractal(t_data *img)
 int	main(void)
 {
 	t_vars	mlx;
-// 
+
 	mlx.mlx = mlx_init();
 	mlx.win = mlx_new_window(mlx.mlx, DIM, DIM, "Hello world!");
 	mlx.img.img = mlx_new_image(mlx.mlx, DIM, DIM);
@@ -66,9 +66,8 @@ int	main(void)
 	&mlx.img.endian);
 	ft_fractal(&mlx.img);
 	mlx_put_image_to_window(mlx.mlx, mlx.win, mlx.img.img, 0, 0);
-	mlx_hook(mlx.win, 2, 1L<<0, ft_hook, &mlx);
-	mlx_hook(mlx.win, 4, 1L<<0, ft_hook, &mlx);
-	mlx_mouse_hook(mlx.win, ft_hook, &mlx);
+	mlx_hook(mlx.win, 2, 1L<<0, ft_key_hook, &mlx);
+	mlx_mouse_hook(mlx.win, ft_mouse_hook, &mlx);
 	mlx_loop(mlx.mlx);
 	return(0);
 }

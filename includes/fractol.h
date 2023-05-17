@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:13:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/17 16:56:11 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:15:44 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ t_complex	ft_add_complex(t_complex a, t_complex b);
 /* MLX */
 
 void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
-int			ft_hook(int keycode, t_vars *vars);
+int			ft_key_hook(int keycode, t_vars *mlx);
+int			ft_mouse_hook(int keycode, int x, int y, t_vars *mlx);
+
 
 #endif
