@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:12:54 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/17 17:29:47 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/17 18:16:59 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ static void	ft_pix(t_point p, t_data *img)
 		my_mlx_pixel_put(img, p.pos.re, p.pos.img, 0x0000FF00);
 }
 
-static t_complex	ft_point(int px, int py)
+static t_complex	ft_point(int px, int py, t_ref ref)
 {
 	double long	x;
 	double long y;
 
-	x = xmin + ((xmax - xmin) / DIM) * px;
-	y = ymin + ((ymax - ymin) / DIM) * py;
+	x = ref.xmin + ((ref.xmax - ref.xmin) / DIM) * px;
+	y = ref.ymin + ((ref.ymax - ref.ymin) / DIM) * py;
 	return ((t_complex){x, y});
 }
 
-static void	ft_fractal(t_data *img)
+static void	ft_fractal(t_data *img, t_ref ref)
 {
 	double long	i;
 	double long	j;
@@ -49,7 +49,7 @@ static void	ft_fractal(t_data *img)
 		j = -1.0;
 		while (++j < DIM)
 		{
-			tmp = (t_point){(t_complex){i, j}, ft_point(i, j)};
+			tmp = (t_point){(t_complex){i, j}, ft_point(i, j, ref)};
 			ft_pix(tmp, img);
 		}
 	}
@@ -64,7 +64,8 @@ int	main(void)
 	mlx.img.img = mlx_new_image(mlx.mlx, DIM, DIM);
 	mlx.img.addr = mlx_get_data_addr(mlx.img.img, &mlx.img.bits_per_pixel, &mlx.img.line_length,
 	&mlx.img.endian);
-	ft_fractal(&mlx.img);
+	mlx.ref = (t_ref){XMIN, XMAX, YMIN, YMAX};
+	ft_fractal(&mlx.img, mlx.ref);
 	mlx_put_image_to_window(mlx.mlx, mlx.win, mlx.img.img, 0, 0);
 	mlx_hook(mlx.win, 2, 1L<<0, ft_key_hook, &mlx);
 	mlx_hook(mlx.win, 17, 1L<<17, ft_close, &mlx);
