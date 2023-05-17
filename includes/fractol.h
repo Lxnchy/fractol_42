@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:13:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/16 15:14:29 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:56:11 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@
 # include <math.h>
 # include <mlx.h>
 
-# define xmin -1.0
-# define ymin -1.0
-# define xmax 1.0
-# define ymax 1.0
-# define DIM 800.0
-# define maxiter 300
+# define xmin -1.5
+# define ymin -1.5
+# define xmax 1.5
+# define ymax 1.5
+# define DIM 800
+# define maxiter 20
 
 typedef struct s_complex	t_complex;
 typedef struct s_data		t_data;
 typedef	struct s_point		t_point;
+typedef struct s_vars		t_vars;
 
 struct s_complex
 {
@@ -47,6 +48,13 @@ struct s_point {
 	t_complex	calc;
 };
 
+struct	s_vars {
+	void	*mlx;
+	void	*win;
+	t_data	img;
+};
+
+
 /* COMPLEX */
 
 t_complex	ft_new_complex(long double re, long double img);
@@ -57,5 +65,6 @@ t_complex	ft_add_complex(t_complex a, t_complex b);
 /* MLX */
 
 void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
+int			ft_hook(int keycode, t_vars *vars);
 
 #endif

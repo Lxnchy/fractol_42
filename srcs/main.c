@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:12:54 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/16 15:16:02 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:57:08 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,18 @@ static void	ft_fractal(t_data *img)
 
 int	main(void)
 {
-	void	*mlx;
-	void	*mlx_win;
-	t_data	img;
-
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, DIM, DIM, "Hello world!");
-	img.img = mlx_new_image(mlx, DIM, DIM);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
-	&img.endian);
-	ft_fractal(&img);
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_loop(mlx);
+	t_vars	mlx;
+// 
+	mlx.mlx = mlx_init();
+	mlx.win = mlx_new_window(mlx.mlx, DIM, DIM, "Hello world!");
+	mlx.img.img = mlx_new_image(mlx.mlx, DIM, DIM);
+	mlx.img.addr = mlx_get_data_addr(mlx.img.img, &mlx.img.bits_per_pixel, &mlx.img.line_length,
+	&mlx.img.endian);
+	ft_fractal(&mlx.img);
+	mlx_put_image_to_window(mlx.mlx, mlx.win, mlx.img.img, 0, 0);
+	mlx_hook(mlx.win, 2, 1L<<0, ft_hook, &mlx);
+	mlx_hook(mlx.win, 4, 1L<<0, ft_hook, &mlx);
+	mlx_mouse_hook(mlx.win, ft_hook, &mlx);
+	mlx_loop(mlx.mlx);
 	return(0);
 }
