@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:09:45 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/17 17:16:59 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:38:45 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-static void	ft_close(t_vars *mlx)
+int	ft_close(t_vars *mlx)
 {
 	mlx_destroy_image(mlx->mlx, (mlx->img).img);
 	mlx_clear_window(mlx->mlx, mlx->win);
@@ -36,6 +36,14 @@ int	ft_key_hook(int keycode, t_vars *mlx)
 		ft_close(mlx);
 	else if (keycode == 115)
 		ft_printf("Change color\n");
+	else if (keycode == 65362)
+		ft_printf("Move 10% up\n");
+	else if (keycode == 65361)
+		ft_printf("Move 10% left\n");
+	else if (keycode == 65364)
+		ft_printf("Move 10% down\n");
+	else if (keycode == 65363)
+		ft_printf("Move 10% right\n");
 	return (0);
 }
 
