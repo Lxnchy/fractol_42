@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:13:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/17 17:15:44 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:20:33 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <math.h>
 # include <mlx.h>
 
-# define xmin -1.5
+# define xmin -2.2
 # define ymin -1.5
-# define xmax 1.5
+# define xmax 0.8
 # define ymax 1.5
 # define DIM 800
 # define maxiter 20
