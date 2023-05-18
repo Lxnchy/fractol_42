@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:13:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 16:25:20 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 17:16:10 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define J_XMAX 2
 # define J_YMAX 2
 # define DIM 800
-# define maxiter 80
+# define maxiter 20
 
 typedef struct s_complex	t_complex;
 typedef struct s_data		t_data;
@@ -67,6 +67,7 @@ struct	s_vars {
 	t_ref		ref;
 	t_complex	julia;
 	int			fract;
+	void		(*coloring)(int, int);
 	t_data		img;
 };
 
@@ -97,5 +98,9 @@ void		ft_fractal(t_data *img, t_ref ref, int fract, t_complex julia);
 /* PARSING */
 
 void		ft_parse(char **av, int ac, t_vars *mlx);
+
+/* ZOOM */
+
+void		ft_zoom(t_vars *mlx, int x, int y);
 
 #endif

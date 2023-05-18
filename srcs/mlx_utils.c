@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:09:45 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 15:28:33 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 17:03:11 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ int	ft_mouse_hook(int keycode, int x, int y, t_vars *mlx)
 	(void)y;
 	// printf("px: %i ; py: %i ; x: %f ; y: %f\n", x, y, XMIN + ((XMAX - XMIN) / DIM) * x, YMIN + ((YMAX - YMIN) / DIM) * y);
 	if (keycode == 4)
-		ft_printf("ZOOM\n");
+		ft_zoom(mlx, x, y);
+		// ft_printf("ZOOM\n");
 	else if (keycode == 5)
 		ft_printf("DEZOOM\n");
 	(void)mlx;
