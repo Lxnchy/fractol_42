@@ -6,7 +6,7 @@
 #    By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 14:19:17 by jehubert          #+#    #+#              #
-#    Updated: 2023/05/16 15:08:35 by jehubert         ###   ########.fr        #
+#    Updated: 2023/05/18 15:01:14 by jehubert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ LIBFT = libft/libft.a
 
 SRCS = srcs/main.c \
 	srcs/complex.c \
-	srcs/mlx_utils.c
+	srcs/mlx_utils.c \
+	srcs/fract.c
 
 OBJS = $(patsubst %,objs/%,$(notdir ${SRCS:.c=.o}))
 
