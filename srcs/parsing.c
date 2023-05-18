@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:52:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 16:31:24 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:10:01 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static void	ft_error(void)
 {
 	ft_printf("Mauvais arguments. Veuillez utiliser :\n");
 	ft_printf("./fractol 0 pour afficher la fractale de Mandelbrot\n");
-	ft_printf("./fractol 1 x y pour afficher la fractales de julia correspondante aux coordonnes x et y\n");
+	ft_printf("./fractol 1 x y pour afficher la fractales de Julia ");
+	ft_printf("correspondante aux coordonnes x et y\n");
 	exit(1);
 }
 

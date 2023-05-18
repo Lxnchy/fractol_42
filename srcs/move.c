@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 16:48:59 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 19:01:13 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:07:39 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ void	ft_zoom(t_vars *mlx, int x, int y)
 	mlx->ref.ymin = r.ymin + 0.3 * (ny - r.ymin);
 	ft_fractal(&mlx->img, mlx->ref, mlx->fract, mlx->julia);
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.img, 0, 0);
-	
 }
-
 
 void	ft_dezoom(t_vars *mlx, int x, int y)
 {
@@ -46,7 +44,6 @@ void	ft_dezoom(t_vars *mlx, int x, int y)
 	mlx->ref.ymin = r.ymin - 0.3 * (ny - r.ymin);
 	ft_fractal(&mlx->img, mlx->ref, mlx->fract, mlx->julia);
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.img, 0, 0);
-	
 }
 
 void	ft_move(t_vars *mlx, char *move)
