@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:13:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 15:27:35 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:25:20 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@
 # define M_YMIN -1.5
 # define M_XMAX 0.8
 # define M_YMAX 1.5
+# define J_XMIN -2
+# define J_YMIN -2
+# define J_XMAX 2
+# define J_YMAX 2
 # define DIM 800
 # define maxiter 80
 
@@ -58,10 +62,12 @@ struct s_point {
 };
 
 struct	s_vars {
-	void	*mlx;
-	void	*win;
-	t_ref	ref;
-	t_data	img;
+	void		*mlx;
+	void		*win;
+	t_ref		ref;
+	t_complex	julia;
+	int			fract;
+	t_data		img;
 };
 
 
@@ -87,5 +93,9 @@ double long ft_atof(char *str);
 /* FRACT */
 
 void		ft_fractal(t_data *img, t_ref ref, int fract, t_complex julia);
+
+/* PARSING */
+
+void		ft_parse(char **av, int ac, t_vars *mlx);
 
 #endif

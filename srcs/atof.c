@@ -6,11 +6,18 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:07:07 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 15:50:50 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:28:36 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+
+static void	ft_bad_digit(void)
+{
+	ft_printf("L'une des coordonnees n'est pas correct.\n");
+	ft_printf("Une coordonnes doit avoir la forme suivante : 1.024 (exemple)\n");
+	exit(1);
+}
 
 static void	ft_sign(char **ptr, int *sign)
 {
@@ -26,7 +33,8 @@ static void	ft_sign(char **ptr, int *sign)
 		(*ptr)++;
 		return ;
 	}
-	// else if is not digit exit error
+	else if (!ft_isdigit(**ptr))
+		ft_bad_digit();
 	*sign = 1;
 }
 

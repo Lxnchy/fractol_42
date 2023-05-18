@@ -6,16 +6,17 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:12:54 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 15:50:53 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:25:34 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	// t_vars	mlx;
+	t_vars	mlx;
 
+	ft_parse(av, ac, &mlx);
 	// mlx.mlx = mlx_init();
 	// mlx.win = mlx_new_window(mlx.mlx, DIM, DIM, "Hello world!");
 	// mlx.img.img = mlx_new_image(mlx.mlx, DIM, DIM);
