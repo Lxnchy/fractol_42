@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:52:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 19:10:01 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 21:18:24 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,6 @@ void	ft_parse(char **av, int ac, t_vars *mlx)
 		else
 			ft_julia_init(mlx, av);
 	}
+	else
+		ft_error();
 }

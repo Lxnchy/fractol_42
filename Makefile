@@ -6,7 +6,7 @@
 #    By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 14:19:17 by jehubert          #+#    #+#              #
-#    Updated: 2023/05/18 18:20:18 by jehubert         ###   ########.fr        #
+#    Updated: 2023/05/18 21:20:26 by jehubert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ ${NAME}:	$(OBJS) Makefile includes/fractol.h
 
 all: $(NAME)
 
-re: all
+re: fclean all
 
 clean:
 	make --no-print-directory -C ./libft clean
