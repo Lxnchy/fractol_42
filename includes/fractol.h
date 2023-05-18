@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:13:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 15:00:05 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:27:35 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 # include <math.h>
 # include <mlx.h>
 
-# define XMIN -2.2
-# define YMIN -1.5
-# define XMAX 0.8
-# define YMAX 1.5
+# define M_XMIN -2.2
+# define M_YMIN -1.5
+# define M_XMAX 0.8
+# define M_YMAX 1.5
 # define DIM 800
 # define maxiter 80
 
@@ -79,6 +79,10 @@ int			ft_key_hook(int keycode, t_vars *mlx);
 int			ft_mouse_hook(int keycode, int x, int y, t_vars *mlx);
 int			ft_close(t_vars *mlx);
 
+
+/* ATOF */
+
+double long ft_atof(char *str);
 
 /* FRACT */
 
