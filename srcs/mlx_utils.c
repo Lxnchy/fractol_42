@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:09:45 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 17:59:44 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 18:25:41 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ int	ft_key_hook(int keycode, t_vars *mlx)
 	else if (keycode == 115)
 		ft_printf("Change color\n");
 	else if (keycode == 65362)
-		ft_printf("Move 10% up\n");
+		ft_move(mlx, "up");
 	else if (keycode == 65361)
-		ft_printf("Move 10% left\n");
+		ft_move(mlx, "left");
 	else if (keycode == 65364)
-		ft_printf("Move 10% down\n");
+		ft_move(mlx, "down");
 	else if (keycode == 65363)
-		ft_printf("Move 10% right\n");
+		ft_move(mlx, "right");
 	return (0);
 }
 

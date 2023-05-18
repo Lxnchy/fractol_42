@@ -6,7 +6,7 @@
 #    By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 14:19:17 by jehubert          #+#    #+#              #
-#    Updated: 2023/05/18 17:03:31 by jehubert         ###   ########.fr        #
+#    Updated: 2023/05/18 18:20:18 by jehubert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = srcs/main.c \
 	srcs/fract.c \
 	srcs/atof.c \
 	srcs/parsing.c \
-	srcs/zoom.c
+	srcs/move.c
 
 OBJS = $(patsubst %,objs/%,$(notdir ${SRCS:.c=.o}))
 

@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:13:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 17:59:26 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/18 18:24:29 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,6 @@ void		ft_parse(char **av, int ac, t_vars *mlx);
 
 void		ft_zoom(t_vars *mlx, int x, int y);
 void		ft_dezoom(t_vars *mlx, int x, int y);
+void		ft_move(t_vars *mlx, char *move);
 
 #endif
