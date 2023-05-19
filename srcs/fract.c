@@ -6,19 +6,19 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:59:29 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 19:17:02 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/19 03:07:01 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-static void	ft_pix(t_point p, t_data *img, int fract, t_complex julia)
+static void	ft_pix(t_point p, t_vars *mlx)
 {
 	t_complex	z;
 	t_complex	c;
 	int			i;
 
-	if (!fract)
+	if (!mlx->fract)
 	{
 		z = (t_complex){0, 0};
 		c = p.calc;
@@ -26,15 +26,16 @@ static void	ft_pix(t_point p, t_data *img, int fract, t_complex julia)
 	else
 	{
 		z = p.calc;
-		c = julia;
+		c = mlx->julia;
 	}
 	i = -1;
 	while (ft_mod_complex(z) < 4 && ++i < MAXITER)
 		z = ft_add_complex(ft_mul_complex(z, z), c);
 	if (i == MAXITER)
-		my_mlx_pixel_put(img, p.pos.re, p.pos.img, 0);
+		my_mlx_pixel_put(&mlx->img, p.pos.re, p.pos.img, 0);
 	else
-		my_mlx_pixel_put(img, p.pos.re, p.pos.img, 0x0000FF00);
+		my_mlx_pixel_put(&mlx->img, p.pos.re, p.pos.img,
+			ft_color(i, mlx->fr, mlx->fg, mlx->fb));
 }
 
 static t_complex	ft_point(int px, int py, t_ref ref)
@@ -47,7 +48,7 @@ static t_complex	ft_point(int px, int py, t_ref ref)
 	return ((t_complex){x, y});
 }
 
-void	ft_fractal(t_data *img, t_ref ref, int fract, t_complex julia)
+void	ft_fractal(t_vars *mlx)
 {
 	double long	i;
 	double long	j;
@@ -59,8 +60,8 @@ void	ft_fractal(t_data *img, t_ref ref, int fract, t_complex julia)
 		j = -1.0;
 		while (++j < DIM)
 		{
-			tmp = (t_point){(t_complex){i, j}, ft_point(i, j, ref)};
-			ft_pix(tmp, img, fract, julia);
+			tmp = (t_point){(t_complex){i, j}, ft_point(i, j, mlx->ref)};
+			ft_pix(tmp, mlx);
 		}
 	}
 }

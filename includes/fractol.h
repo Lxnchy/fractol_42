@@ -6,7 +6,7 @@
 /*   By: jehubert <jehubert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:13:56 by jehubert          #+#    #+#             */
-/*   Updated: 2023/05/18 21:22:44 by jehubert         ###   ########.fr       */
+/*   Updated: 2023/05/19 03:08:55 by jehubert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 # define M_YMIN -1.5
 # define M_XMAX 0.8
 # define M_YMAX 1.5
-# define J_XMIN -2
-# define J_YMIN -2
-# define J_XMAX 2
-# define J_YMAX 2
-# define DIM 800
-# define MAXITER 50
+# define J_XMIN -1
+# define J_YMIN -1
+# define J_XMAX 1
+# define J_YMAX 1
+# define DIM 1000
+# define MAXITER 20
 
 typedef struct s_complex	t_complex;
 typedef struct s_data		t_data;
@@ -67,7 +67,9 @@ struct	s_vars {
 	t_ref		ref;
 	t_complex	julia;
 	int			fract;
-	void		(*coloring)(int, int);
+	int			fr;
+	int			fg;
+	int			fb;
 	t_data		img;
 };
 
@@ -91,7 +93,8 @@ double long	ft_atof(char *str);
 
 /* FRACT */
 
-void		ft_fractal(t_data *img, t_ref ref, int fract, t_complex julia);
+// void		ft_fractal(t_data *img, t_ref ref, int fract, t_complex julia);
+void		ft_fractal(t_vars *mlx);
 
 /* PARSING */
 
@@ -102,5 +105,10 @@ void		ft_parse(char **av, int ac, t_vars *mlx);
 void		ft_zoom(t_vars *mlx, int x, int y);
 void		ft_dezoom(t_vars *mlx, int x, int y);
 void		ft_move(t_vars *mlx, char *move);
+
+/* COLORS */
+
+int			ft_color(int n, int fr, int fg, int fb);
+void		ft_update_color(t_vars *mlx);
 
 #endif

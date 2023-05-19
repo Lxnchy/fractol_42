@@ -35,7 +35,7 @@ int	ft_key_hook(int keycode, t_vars *mlx)
 	if (keycode == 65307)
 		ft_close(mlx);
 	else if (keycode == 115)
-		ft_printf("Change color\n");
+		ft_update_color(mlx);
 	else if (keycode == 65362)
 		ft_move(mlx, "up");
 	else if (keycode == 65361)
